@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "product": "MoveSpeech",
-  "version": "1.0.0",
-  "sequence": 3,
-  "summary": "Speech for Sampling, Slice, sample controls and step velocity.",
-  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.0/MoveSpeech-1.0.0.zip",
-  "bytes": 25865,
-  "sha256": "f50ebc620c2b07eee1ec340fd90bdf307e351cf9bbe9155d2354b6cb76776c5c",
+  "version": "1.0.1",
+  "sequence": 4,
+  "summary": "Short shell installation and removal commands; speech fixes are unchanged.",
+  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.1/MoveSpeech-1.0.1.zip",
+  "bytes": 27099,
+  "sha256": "56a9d61ef57e571a4e6c16479f77503ad3a87cdd5c27fc58d207017607f581ad",
   "files": {
     "Manual.html": {
-      "bytes": 8004,
-      "sha256": "07177c2b421687a74460b4832e0ea1de3df32601a52274098e57b23653c2177e",
+      "bytes": 9836,
+      "sha256": "4119254a33569cd27df219bcb6cb43d0431279eb36c1642009d77ec92a1179be",
       "mode": 420
     },
     "catalog.json": {
@@ -45,7 +45,12 @@
     },
     "install.py": {
       "bytes": 8742,
-      "sha256": "408bbbe21c1460ad15885ddab1a448d414426a7e05020573b418ec734aa1e363",
+      "sha256": "c49ad161ba89add11b72616a589a4d8930b267ec983b854baa163319188e76c3",
+      "mode": 420
+    },
+    "install.sh": {
+      "bytes": 892,
+      "sha256": "4d991c95b172d0a1f79ce9c8f96d9b43d26f13310af3d389986409137f6ea79a",
       "mode": 420
     },
     "patcher.py": {
@@ -69,8 +74,8 @@
       "mode": 420
     },
     "verify.py": {
-      "bytes": 4955,
-      "sha256": "5c4bc7fd84c65478c179e8e1f8b0ae64dc75a808c68531d3db737e3e48bf1aae",
+      "bytes": 5170,
+      "sha256": "1766d51b2c2e90e029ae9a423c38597f48ecf9f26beaa9150f447b929d202519",
       "mode": 420
     }
   }

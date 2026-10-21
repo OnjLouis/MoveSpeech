@@ -10,6 +10,15 @@ Schwung speech setups can receive the restored text.
 Run in a root SSH shell on Move:
 
 ```sh
+wget -qO- https://onjlouis.github.io/MoveSpeech/install.sh | sh
+```
+
+**Security notice:** Move's built-in `wget` does not verify HTTPS certificates.
+This short command trusts your network to deliver the initial shell script.
+Signed package checks cannot protect a replaced first script. On an untrusted
+network, use the certificate-checked Python option instead:
+
+```sh
 python3 -E -s -B -c 'import urllib.request;exec(urllib.request.urlopen("https://raw.githubusercontent.com/OnjLouis/MoveSpeech/main/bootstrap.py",timeout=30).read())'
 ```
 
@@ -18,9 +27,21 @@ the patch on-device and asks before restarting Move. No compiler or Ableton
 firmware download is required. Schwung is optional; voice settings and sets
 are preserved.
 
-Append `--check` to check compatibility without restarting, `--status` to
-show the installed state, or `--uninstall` to restore unmodified Move.
-Append `--yes` only when you want to approve a restart without a prompt.
+For a shell check without restarting, end the short command with
+`| sh -s -- --check`. To remove the patch, use `| sh -s -- --uninstall`.
+Use `| sh -s -- --status` to show the installed state, or `| sh -s -- --yes`
+only when you want to approve a restart without a prompt.
+
+For the Python option, append the same option after its closing single quote.
+Both methods use the same signed installer and preserve confirmation prompts.
+Inspect the [shell entry](install.sh) and [Python bootstrap](bootstrap.py)
+before running them if you prefer.
+
+Version 1.0.1 and later also install an offline shell entry:
+
+```sh
+sh /data/onj-move-accessibility/install.sh --uninstall
+```
 
 Read [the HTML manual](https://onjlouis.github.io/MoveSpeech/) before installing. Exact firmware
 and startup-script checks must pass; unknown builds are left unchanged.

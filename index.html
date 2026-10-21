@@ -12,9 +12,12 @@ table { border-collapse: collapse; width: 100%; } th,td { padding: .5rem; border
 </style>
 </head>
 <body>
-<header><h1>Move Speech Help</h1><p>Speech fixes for Ableton Move. Version 1.0.</p></header>
+<header><h1>Move Speech Help</h1><p>Speech fixes for Ableton Move. Version 1.0.1.</p></header>
 <main>
 <h2 id="changes">Changes</h2>
+<h3>1.0.1</h3>
+<p>Short shell commands for installation, checks and removal, with the certificate-checked Python option still available. Confirmation prompts work when the shell script is piped into the SSH terminal. Speech fixes are unchanged.</p>
+<h3>1.0.0</h3>
 <p>Initial release: speech for Sampling, Slice, sample start and end controls, and step velocity, with a reversible on-device installer.</p>
 <nav aria-label="Contents"><h2>Contents</h2><ul>
 <li><a href="#before">Before installing</a></li>
@@ -29,11 +32,16 @@ table { border-collapse: collapse; width: 100%; } th,td { padding: .5rem; border
 <p>You need Ableton Move, an internet connection and a root SSH shell on the device. This installer does not enable SSH or bypass its authentication. Keep Move connected to power and stop playback or recording before installing. Move normally saves sets automatically.</p>
 <p>Move Speech is an unofficial modification, not an Ableton product. It does not replace Move's voice engine or install Schwung. It requires Move's existing Python 3, OpenSSL and system utilities; no compiler or extra package installation is needed.</p>
 <h2 id="install">Install</h2>
-<p>Run this command in Move's root SSH shell, not in your computer's ordinary terminal:</p>
+<p>Run either option in Move's root SSH shell, not in your computer's ordinary terminal.</p>
+<h3>Short Shell Command</h3>
+<pre><code>wget -qO- https://onjlouis.github.io/MoveSpeech/install.sh | sh</code></pre>
+<p><strong>Security notice:</strong> Move's built-in <code>wget</code> does not verify HTTPS certificates. This short command trusts your network to deliver the initial shell script unchanged. Signed package checks cannot protect you if that first script is replaced. Use the certificate-checked Python option below on an untrusted network.</p>
+<p>The shell script calls the same Python installer; it does not contain a separate patching implementation. You can inspect the <a href="https://github.com/OnjLouis/MoveSpeech/blob/main/install.sh">shell script</a> and <a href="https://github.com/OnjLouis/MoveSpeech/blob/main/bootstrap.py">Python bootstrap</a> before running them.</p>
+<h3>Certificate-Checked Python Option</h3>
 <pre><code>python3 -E -s -B -c 'import urllib.request;exec(urllib.request.urlopen("https://raw.githubusercontent.com/OnjLouis/MoveSpeech/main/bootstrap.py",timeout=30).read())'</code></pre>
-<p>The installer explains what it found and asks before restarting Move. It downloads a signed package over verified HTTPS, checks compatibility and constructs the patched executable on your own device. It then enables the fixes at startup. Stock Move and recognised Schwung installations are supported; existing voice settings are preserved.</p>
+<p>Both options explain what the installer found and ask before restarting Move. The Python installer downloads a signed package over certificate-checked HTTPS, checks compatibility and constructs the patched executable on your own device. It then enables the fixes at startup. Stock Move and recognised Schwung installations are supported; existing voice settings are preserved.</p>
 <p>Wait for the completion message. After the restart, open Sampling and turn the wheel to check speech, then try Slice and the sample controls.</p>
-<p>For an unattended install, add <code>--yes</code> after the command's closing single quote. This approves the restart without asking. Otherwise an unattended command stops rather than waiting for an answer.</p>
+<p>For an unattended shell install, end the short command with <code>| sh -s -- --yes</code> instead of <code>| sh</code>. For the Python option, add <code>--yes</code> after the closing single quote. This approves the restart without asking. Otherwise a command without an interactive SSH terminal stops rather than waiting for an answer.</p>
 <h2 id="speech">Using Speech</h2>
 <p>The fixes send text through Move's normal screen-reader path. Open <a href="http://move.local/screen-reader">Move's screen-reader page</a> and complete its normal pairing if requested. Use your computer or phone's screen reader as usual.</p>
 <p>If you already use on-device speech through Schwung, the same restored text is available to it. You do not need Schwung for browser-based speech. Move Speech does not install voices, alter voice licences or change your chosen speech settings.</p>
@@ -51,12 +59,17 @@ table { border-collapse: collapse; width: 100%; } th,td { padding: .5rem; border
 <p>Uninstall Move Speech before installing an official firmware update, so its temporary executable mount cannot interfere with the updater. After updating Move's firmware, run the same install command again. It fetches the current signed compatibility information. The installer uses Move's native executable even when Schwung provides the launcher, so you do not need a separate stock or Schwung command.</p>
 <p>Future firmware is not automatically guaranteed to work. If its profile is unavailable, wait for a Move Speech update. If the startup guard encounters a changed native executable, it declines to apply the old patch and lets unmodified Move start.</p>
 <h2 id="remove">Check or Remove</h2>
-<p>Add <code>--check</code> after the install command to verify compatibility and build the patch in memory without restarting Move or changing its startup. Add <code>--status</code> to display the installed state.</p>
-<p>Add <code>--uninstall</code> to restore unmodified Move and remove our startup additions. A brief restart is required. Voice settings, sets and other startup changes are preserved. Removal can work after an unrecognised firmware update because it does not build a new patch, but unfamiliar executable layouts or changed speech startup blocks are refused safely. The installer retains its small support files, bounded logs and rollback archive for diagnosis and reinstalling.</p>
-<p>When already installed, these offline commands are also available:</p>
-<pre><code>python3 -E -s -B /data/onj-move-accessibility/install.py --status
-python3 -E -s -B /data/onj-move-accessibility/install.py --check
-python3 -E -s -B /data/onj-move-accessibility/install.py --uninstall</code></pre>
+<p>Check compatibility and build the patch in memory without restarting Move or changing its startup:</p>
+<pre><code>wget -qO- https://onjlouis.github.io/MoveSpeech/install.sh | sh -s -- --check</code></pre>
+<p>Remove the speech patch:</p>
+<pre><code>wget -qO- https://onjlouis.github.io/MoveSpeech/install.sh | sh -s -- --uninstall</code></pre>
+<p>The same network-trust warning applies to these downloaded shell commands. For the certificate-checked Python option, append <code>--check</code>, <code>--status</code> or <code>--uninstall</code> after its closing single quote instead.</p>
+<p>Removal restores unmodified Move and removes our startup additions. A brief restart is required. Voice settings, sets and other startup changes are preserved. Removal can work after an unrecognised firmware update because it does not build a new patch, but unfamiliar executable layouts or changed speech startup blocks are refused safely. The installer retains its small support files, bounded logs and rollback archive for diagnosis and reinstalling.</p>
+<p>Version 1.0.1 and later also include these offline commands, which use the installed copy without downloading a script:</p>
+<pre><code>sh /data/onj-move-accessibility/install.sh --status
+sh /data/onj-move-accessibility/install.sh --check
+sh /data/onj-move-accessibility/install.sh --uninstall</code></pre>
+<p>The original offline Python commands remain available, including with version 1.0.0. Use <code>python3 -E -s -B /data/onj-move-accessibility/install.py</code> followed by the same option.</p>
 <h2 id="recovery">Recovery and Storage</h2>
 <p>The original native executable is not overwritten. A separate patched copy lives on Move's data partition, with a reversible file mount selecting it. Allow at least 100 MiB of free data storage. The installer does not copy a large executable onto the small system partition.</p>
 <p>Ordinary installation failures trigger restoration of the previous startup and managed files. Once the restart operation has been handed to its worker, it can finish if the SSH connection drops. This is not a guarantee against power loss, storage failure or every firmware change: keep power connected.</p>

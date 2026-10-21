@@ -29,7 +29,8 @@ MAX_MANIFEST = 65536
 MAX_PACKAGE = 4 * 1024 * 1024
 REQUIRED_FILES = frozenset({'catalog.json', 'detect_native.py', 'device.py', 'engine.py',
                           'firmware.py', 'hooks.bin', 'install.py', 'patcher.py', 'runtime.py',
-                          'startup_patch.py', 'trust.py', 'verify.py', 'Manual.html'})
+                          'startup_patch.py', 'trust.py', 'verify.py', 'Manual.html', 'install.sh'})
+LEGACY_FILES = REQUIRED_FILES - {'install.sh'}
 
 
 def unique_object(pairs):
@@ -72,7 +73,9 @@ def verify_manifest(raw, signature, directory, openssl='openssl'):
             or not re.fullmatch('[0-9a-f]{64}', manifest.get('sha256', ''))):
         raise ValueError('Invalid package integrity metadata')
     inventory = manifest.get('files')
-    if not isinstance(inventory, dict) or set(inventory) != REQUIRED_FILES:
+    # The signed 1.0.0 inventory must remain readable during upgrade/removal.
+    required = LEGACY_FILES if manifest['version'] == '1.0.0' else REQUIRED_FILES
+    if not isinstance(inventory, dict) or set(inventory) != required:
         raise ValueError('Invalid signed file inventory')
     folded = set()
     for name, item in inventory.items():
