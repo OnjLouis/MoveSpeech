@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Move Speech Help</title>
+<style>
+body { max-width: 56rem; margin: 2rem auto; padding: 0 1rem; font: 1rem/1.6 system-ui,sans-serif; color: #171717; background: white; }
+a { color: #0645ad; } pre { overflow-x: auto; padding: .8rem; background: #f2f2f2; white-space: pre-wrap; overflow-wrap: anywhere; }
+table { border-collapse: collapse; width: 100%; } th,td { padding: .5rem; border: 1px solid #888; text-align: left; vertical-align: top; }
+:focus-visible { outline: 3px solid #1769aa; outline-offset: 3px; }
+</style>
+</head>
+<body>
+<header><h1>Move Speech Help</h1><p>Speech fixes for Ableton Move. Version 1.0.</p></header>
+<main>
+<h2 id="changes">Changes</h2>
+<p>Initial release: speech for Sampling, Slice, sample start and end controls, and step velocity, with a reversible on-device installer.</p>
+<nav aria-label="Contents"><h2>Contents</h2><ul>
+<li><a href="#before">Before installing</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#speech">Using speech</a></li>
+<li><a href="#firmware">Firmware compatibility and updates</a></li>
+<li><a href="#remove">Check or remove</a></li>
+<li><a href="#recovery">Recovery and storage</a></li>
+<li><a href="#about">About</a></li>
+</ul></nav>
+<h2 id="before">Before Installing</h2>
+<p>You need Ableton Move, an internet connection and a root SSH shell on the device. This installer does not enable SSH or bypass its authentication. Keep Move connected to power and stop playback or recording before installing. Move normally saves sets automatically.</p>
+<p>Move Speech is an unofficial modification, not an Ableton product. It does not replace Move's voice engine or install Schwung. It requires Move's existing Python 3, OpenSSL and system utilities; no compiler or extra package installation is needed.</p>
+<h2 id="install">Install</h2>
+<p>Run this command in Move's root SSH shell, not in your computer's ordinary terminal:</p>
+<pre><code>python3 -E -s -B -c 'import urllib.request;exec(urllib.request.urlopen("https://raw.githubusercontent.com/OnjLouis/MoveSpeech/main/bootstrap.py",timeout=30).read())'</code></pre>
+<p>The installer explains what it found and asks before restarting Move. It downloads a signed package over verified HTTPS, checks compatibility and constructs the patched executable on your own device. It then enables the fixes at startup. Stock Move and recognised Schwung installations are supported; existing voice settings are preserved.</p>
+<p>Wait for the completion message. After the restart, open Sampling and turn the wheel to check speech, then try Slice and the sample controls.</p>
+<p>For an unattended install, add <code>--yes</code> after the command's closing single quote. This approves the restart without asking. Otherwise an unattended command stops rather than waiting for an answer.</p>
+<h2 id="speech">Using Speech</h2>
+<p>The fixes send text through Move's normal screen-reader path. Open <a href="http://move.local/screen-reader">Move's screen-reader page</a> and complete its normal pairing if requested. Use your computer or phone's screen reader as usual.</p>
+<p>If you already use on-device speech through Schwung, the same restored text is available to it. You do not need Schwung for browser-based speech. Move Speech does not install voices, alter voice licences or change your chosen speech settings.</p>
+<ul><li>Sampling: menu headings, source, gain, monitoring and recording state.</li>
+<li>Slice: slice count and the relevant region controls.</li>
+<li>Sample controls: start and end values when a sample is loaded, including knob 2 and Shift with knob 5.</li>
+<li>Step velocity: hold a step and turn the volume control to hear its changing velocity value.</li></ul>
+<p>Other controls using the repaired display paths can also benefit. Audio-track Tempo, Start and Input Gain, and drum-pad Volume have been reported working. This does not mean every silent screen or control is fixed.</p>
+<h2 id="firmware">Firmware Compatibility and Updates</h2>
+<table><caption>Firmware profiles</caption><thead><tr><th scope="col">Firmware</th><th scope="col">Verification</th></tr></thead><tbody>
+<tr><td>2.1.5b2</td><td>Speech confirmed on a physical Move.</td></tr>
+<tr><td>2.1.5b1 and 2.1.1</td><td>Offline compatibility checks only; a physical-device trial is still needed.</td></tr>
+</tbody></table>
+<p>Exact executable and startup-script checks must pass. A matching version number alone is not sufficient. An unfamiliar firmware or independently modified startup script is left unchanged rather than patched speculatively.</p>
+<p>Uninstall Move Speech before installing an official firmware update, so its temporary executable mount cannot interfere with the updater. After updating Move's firmware, run the same install command again. It fetches the current signed compatibility information. The installer uses Move's native executable even when Schwung provides the launcher, so you do not need a separate stock or Schwung command.</p>
+<p>Future firmware is not automatically guaranteed to work. If its profile is unavailable, wait for a Move Speech update. If the startup guard encounters a changed native executable, it declines to apply the old patch and lets unmodified Move start.</p>
+<h2 id="remove">Check or Remove</h2>
+<p>Add <code>--check</code> after the install command to verify compatibility and build the patch in memory without restarting Move or changing its startup. Add <code>--status</code> to display the installed state.</p>
+<p>Add <code>--uninstall</code> to restore unmodified Move and remove our startup additions. A brief restart is required. Voice settings, sets and other startup changes are preserved. Removal can work after an unrecognised firmware update because it does not build a new patch, but unfamiliar executable layouts or changed speech startup blocks are refused safely. The installer retains its small support files, bounded logs and rollback archive for diagnosis and reinstalling.</p>
+<p>When already installed, these offline commands are also available:</p>
+<pre><code>python3 -E -s -B /data/onj-move-accessibility/install.py --status
+python3 -E -s -B /data/onj-move-accessibility/install.py --check
+python3 -E -s -B /data/onj-move-accessibility/install.py --uninstall</code></pre>
+<h2 id="recovery">Recovery and Storage</h2>
+<p>The original native executable is not overwritten. A separate patched copy lives on Move's data partition, with a reversible file mount selecting it. Allow at least 100 MiB of free data storage. The installer does not copy a large executable onto the small system partition.</p>
+<p>Ordinary installation failures trigger restoration of the previous startup and managed files. Once the restart operation has been handed to its worker, it can finish if the SSH connection drops. This is not a guarantee against power loss, storage failure or every firmware change: keep power connected.</p>
+<p>Logs are kept in <code>/data/onj-move-accessibility</code> as <code>install.log</code>, <code>install.previous.log</code>, <code>startup.log</code> and <code>startup.previous.log</code>. The latest operation is recorded in <code>operation.json</code>. No background patch daemon is left running.</p>
+<p>If installation fails, preserve the error and these logs before retrying. Do not manually delete or replace Move's firmware files. If an independently changed startup or unknown executable mount is reported, the installer refuses to overwrite it.</p>
+<h2 id="about">About</h2>
+<p>Move Speech by Andre Louis restores text to Ableton Move's existing accessibility path. Ableton Move firmware and trademarks belong to their respective owners. Downloaded packages contain the patch and installer, not Ableton's native executable.</p>
+<p><a href="https://onj.me/software">Andre's software</a> | <a href="https://github.com/OnjLouis/MoveSpeech">Project page</a></p>
+</main></body></html>

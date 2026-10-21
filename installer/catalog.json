@@ -1,0 +1,403 @@
+{
+  "schema": 1,
+  "product": "MoveSpeech",
+  "payload_bytes": 1923,
+  "payload_sha256": "8bfa3925e3a2b7795cfad406a6d0717704a94bdbb8b1646de889779ffad82fa2",
+  "segment_address": 31195136,
+  "payload_address": 31199232,
+  "init_sha256": "15426e57dfd1f9aea75d130e0859ed410b6629f28fea1277157aaad2d6f74564",
+  "entries": {
+    "sampling_call": 0,
+    "gain_call": 72,
+    "slice_count_call": 144,
+    "slice_waveform_call": 216,
+    "sample_waveform_tail": 256,
+    "step_velocity_call": 296
+  },
+  "fixups": [
+    {
+      "offset": 12,
+      "helper": "draw_text"
+    },
+    {
+      "offset": 84,
+      "helper": "draw_text"
+    },
+    {
+      "offset": 156,
+      "helper": "draw_text"
+    },
+    {
+      "offset": 228,
+      "helper": "waveform_draw"
+    },
+    {
+      "offset": 268,
+      "helper": "waveform_draw"
+    },
+    {
+      "offset": 324,
+      "helper": "draw_lines"
+    },
+    {
+      "offset": 1228,
+      "helper": "screenreader_set"
+    }
+  ],
+  "fingerprints": {
+    "sampling_call": {
+      "bytes": 1964,
+      "site_offset": 1136,
+      "sha256": "e4caa8c8a4d9db12d49207fc3cc3d80ba5ca60ac1c3e368d86f74c249229b486"
+    },
+    "gain_call": {
+      "bytes": 448,
+      "site_offset": 212,
+      "sha256": "a59dba4c10002ec056f44ef83e72c852a785276f52213b533d20435dbdf6d9ea"
+    },
+    "slice_count_call": {
+      "bytes": 468,
+      "site_offset": 380,
+      "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+    },
+    "slice_waveform_call": {
+      "bytes": 468,
+      "site_offset": 100,
+      "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+    },
+    "sample_waveform_tail": {
+      "bytes": 28,
+      "site_offset": 24,
+      "sha256": "af4cc40619fb715a952defeb8e2924e8524faa47342e0d245cf166de5f3f2588"
+    },
+    "draw_text": {
+      "bytes": 1160,
+      "site_offset": 0,
+      "sha256": "f4ef6f160c43aea86df88987177c60a89a959b7a75c3e3d869e3a38e35e024ea"
+    },
+    "step_velocity_call": {
+      "bytes": 2380,
+      "site_offset": 1780,
+      "sha256": "364b131ce7b400422b99f98ec93bcce705715ba5da25e24b45f451f22cfde0e2"
+    },
+    "velocity_caller": {
+      "bytes": 23972,
+      "site_offset": 17244,
+      "sha256": "8e2ad8f2f538bfedff59b269c164f4cfacbad012fb98008bfcd0b097a78bdefa"
+    },
+    "draw_lines": {
+      "bytes": 980,
+      "site_offset": 0,
+      "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
+    },
+    "screenreader_set": {
+      "bytes": 220,
+      "site_offset": 0,
+      "sha256": "69f830682cea694eb26e75393c99403e33e94025082682506ef2a63d53cf1e6f"
+    },
+    "waveform_draw": {
+      "bytes": 568,
+      "site_offset": 0,
+      "sha256": "ac20f7170192991ea0bdcb2e8b3ad310deebdcbcb5714860e58c16fb56fcd11b"
+    },
+    "waveform_header_draw": {
+      "bytes": 1912,
+      "site_offset": 0,
+      "sha256": "67295628c25b133c227e508f94b5eb2aa86fe68c6c88e51c85770214aaeeffcd"
+    },
+    "header_single": {
+      "bytes": 84,
+      "site_offset": 0,
+      "sha256": "05413fb90d84d7debc8d7d5cd5e4a11f0039a4f1cce39b3ef1fd491ff65415b2"
+    },
+    "header_pair": {
+      "bytes": 148,
+      "site_offset": 0,
+      "sha256": "f5a0b18e09772221810fed217d2397fb5bfd40a6177ef83352742f6b90d9cc16"
+    }
+  },
+  "profiles": {
+    "bc39b3c2419a8664cbb560a5d3ddf86d72a0c995fd2dcf9b09615cbda13df9a4": {
+      "version": "2.1.5b2",
+      "bytes": 30839200,
+      "addresses": {
+        "sampling_call": 8836292,
+        "gain_call": 8824860,
+        "slice_count_call": 9671864,
+        "slice_waveform_call": 9671584,
+        "sample_waveform_tail": 9467232,
+        "step_velocity_call": 10034860,
+        "velocity_caller": 8045688,
+        "draw_text": 15492952,
+        "screenreader_set": 9701172,
+        "waveform_draw": 10046872,
+        "waveform_header_draw": 10050096,
+        "header_single": 10052008,
+        "header_pair": 10052092,
+        "draw_lines": 15494452
+      },
+      "fingerprints": {
+        "sampling_call": {
+          "bytes": 1964,
+          "site_offset": 1136,
+          "sha256": "e4caa8c8a4d9db12d49207fc3cc3d80ba5ca60ac1c3e368d86f74c249229b486"
+        },
+        "gain_call": {
+          "bytes": 448,
+          "site_offset": 212,
+          "sha256": "a59dba4c10002ec056f44ef83e72c852a785276f52213b533d20435dbdf6d9ea"
+        },
+        "slice_count_call": {
+          "bytes": 468,
+          "site_offset": 380,
+          "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+        },
+        "slice_waveform_call": {
+          "bytes": 468,
+          "site_offset": 100,
+          "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+        },
+        "sample_waveform_tail": {
+          "bytes": 28,
+          "site_offset": 24,
+          "sha256": "af4cc40619fb715a952defeb8e2924e8524faa47342e0d245cf166de5f3f2588"
+        },
+        "step_velocity_call": {
+          "bytes": 2380,
+          "site_offset": 1780,
+          "sha256": "364b131ce7b400422b99f98ec93bcce705715ba5da25e24b45f451f22cfde0e2"
+        },
+        "velocity_caller": {
+          "bytes": 23972,
+          "site_offset": 17244,
+          "sha256": "8e2ad8f2f538bfedff59b269c164f4cfacbad012fb98008bfcd0b097a78bdefa"
+        },
+        "draw_text": {
+          "bytes": 1160,
+          "site_offset": 0,
+          "sha256": "f4ef6f160c43aea86df88987177c60a89a959b7a75c3e3d869e3a38e35e024ea"
+        },
+        "screenreader_set": {
+          "bytes": 220,
+          "site_offset": 0,
+          "sha256": "69f830682cea694eb26e75393c99403e33e94025082682506ef2a63d53cf1e6f"
+        },
+        "waveform_draw": {
+          "bytes": 568,
+          "site_offset": 0,
+          "sha256": "ac20f7170192991ea0bdcb2e8b3ad310deebdcbcb5714860e58c16fb56fcd11b"
+        },
+        "waveform_header_draw": {
+          "bytes": 1912,
+          "site_offset": 0,
+          "sha256": "67295628c25b133c227e508f94b5eb2aa86fe68c6c88e51c85770214aaeeffcd"
+        },
+        "header_single": {
+          "bytes": 84,
+          "site_offset": 0,
+          "sha256": "05413fb90d84d7debc8d7d5cd5e4a11f0039a4f1cce39b3ef1fd491ff65415b2"
+        },
+        "header_pair": {
+          "bytes": 148,
+          "site_offset": 0,
+          "sha256": "f5a0b18e09772221810fed217d2397fb5bfd40a6177ef83352742f6b90d9cc16"
+        },
+        "draw_lines": {
+          "bytes": 980,
+          "site_offset": 0,
+          "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
+        }
+      },
+      "candidate_sha256": "745f819497f2a64fb06485ccc73bcf20691d593bf95335ae2f896e3df484227c",
+      "hardware_verified": true
+    },
+    "22a61d9c2a1b34060aab36fb2084d600ac01f6b13455cd5d1e19d26be41944a1": {
+      "version": "2.1.5b1",
+      "bytes": 30839472,
+      "addresses": {
+        "sampling_call": 8836568,
+        "gain_call": 8825136,
+        "slice_count_call": 9672136,
+        "slice_waveform_call": 9671856,
+        "sample_waveform_tail": 9467504,
+        "step_velocity_call": 10035132,
+        "velocity_caller": 8045964,
+        "draw_text": 15493224,
+        "screenreader_set": 9701444,
+        "waveform_draw": 10047144,
+        "waveform_header_draw": 10050368,
+        "header_single": 10052280,
+        "header_pair": 10052364,
+        "draw_lines": 15494724
+      },
+      "fingerprints": {
+        "sampling_call": {
+          "bytes": 1964,
+          "site_offset": 1136,
+          "sha256": "e4caa8c8a4d9db12d49207fc3cc3d80ba5ca60ac1c3e368d86f74c249229b486"
+        },
+        "gain_call": {
+          "bytes": 448,
+          "site_offset": 212,
+          "sha256": "a59dba4c10002ec056f44ef83e72c852a785276f52213b533d20435dbdf6d9ea"
+        },
+        "slice_count_call": {
+          "bytes": 468,
+          "site_offset": 380,
+          "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+        },
+        "slice_waveform_call": {
+          "bytes": 468,
+          "site_offset": 100,
+          "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+        },
+        "sample_waveform_tail": {
+          "bytes": 28,
+          "site_offset": 24,
+          "sha256": "af4cc40619fb715a952defeb8e2924e8524faa47342e0d245cf166de5f3f2588"
+        },
+        "step_velocity_call": {
+          "bytes": 2380,
+          "site_offset": 1780,
+          "sha256": "d5064066c7a51b9c1d462d664c41d572272eaa96df91fea13468ad1c457ca77f"
+        },
+        "velocity_caller": {
+          "bytes": 23972,
+          "site_offset": 17244,
+          "sha256": "8c8fbc883b019c51f7c12eab576d45bb53b5b83e2e4231767df4a6a69d5ef3d6"
+        },
+        "draw_text": {
+          "bytes": 1160,
+          "site_offset": 0,
+          "sha256": "f4ef6f160c43aea86df88987177c60a89a959b7a75c3e3d869e3a38e35e024ea"
+        },
+        "screenreader_set": {
+          "bytes": 220,
+          "site_offset": 0,
+          "sha256": "69f830682cea694eb26e75393c99403e33e94025082682506ef2a63d53cf1e6f"
+        },
+        "waveform_draw": {
+          "bytes": 568,
+          "site_offset": 0,
+          "sha256": "ac20f7170192991ea0bdcb2e8b3ad310deebdcbcb5714860e58c16fb56fcd11b"
+        },
+        "waveform_header_draw": {
+          "bytes": 1912,
+          "site_offset": 0,
+          "sha256": "67295628c25b133c227e508f94b5eb2aa86fe68c6c88e51c85770214aaeeffcd"
+        },
+        "header_single": {
+          "bytes": 84,
+          "site_offset": 0,
+          "sha256": "05413fb90d84d7debc8d7d5cd5e4a11f0039a4f1cce39b3ef1fd491ff65415b2"
+        },
+        "header_pair": {
+          "bytes": 148,
+          "site_offset": 0,
+          "sha256": "f5a0b18e09772221810fed217d2397fb5bfd40a6177ef83352742f6b90d9cc16"
+        },
+        "draw_lines": {
+          "bytes": 980,
+          "site_offset": 0,
+          "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
+        }
+      },
+      "candidate_sha256": "ea62a100fa7256b64a7fd9655716f684fb2236a0881a6e273e6b289b269ba434",
+      "hardware_verified": false
+    },
+    "e5ddb1b06c808117da453312d0169a7b9553f5651214ceff5635fc06a0baf8b8": {
+      "version": "2.1.1",
+      "bytes": 29942120,
+      "addresses": {
+        "sampling_call": 8744092,
+        "gain_call": 8733844,
+        "slice_count_call": 9396700,
+        "slice_waveform_call": 9396420,
+        "sample_waveform_tail": 9190124,
+        "step_velocity_call": 9758376,
+        "velocity_caller": 7986404,
+        "draw_text": 14940344,
+        "screenreader_set": 9426088,
+        "waveform_draw": 9770368,
+        "waveform_header_draw": 9193040,
+        "header_single": 9194952,
+        "header_pair": 9195036,
+        "draw_lines": 14941844
+      },
+      "fingerprints": {
+        "sampling_call": {
+          "bytes": 1964,
+          "site_offset": 1136,
+          "sha256": "e4caa8c8a4d9db12d49207fc3cc3d80ba5ca60ac1c3e368d86f74c249229b486"
+        },
+        "gain_call": {
+          "bytes": 448,
+          "site_offset": 212,
+          "sha256": "a59dba4c10002ec056f44ef83e72c852a785276f52213b533d20435dbdf6d9ea"
+        },
+        "slice_count_call": {
+          "bytes": 468,
+          "site_offset": 380,
+          "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+        },
+        "slice_waveform_call": {
+          "bytes": 468,
+          "site_offset": 100,
+          "sha256": "e9c0cc5c54558c094a1e5701d80d47dabfd47b5e05c3abcfa367f165658d0080"
+        },
+        "sample_waveform_tail": {
+          "bytes": 28,
+          "site_offset": 24,
+          "sha256": "af4cc40619fb715a952defeb8e2924e8524faa47342e0d245cf166de5f3f2588"
+        },
+        "step_velocity_call": {
+          "bytes": 2388,
+          "site_offset": 1788,
+          "sha256": "c54a916823313b36bcba38c1f03555a3e2c72f28900a0d54e76fc7d76b2ab6d8"
+        },
+        "velocity_caller": {
+          "bytes": 23016,
+          "site_offset": 16336,
+          "sha256": "c70f82b88c3f718caef59e65356700a0d7038375c7d14ef01688ce9b3b224f0b"
+        },
+        "draw_text": {
+          "bytes": 1160,
+          "site_offset": 0,
+          "sha256": "f4ef6f160c43aea86df88987177c60a89a959b7a75c3e3d869e3a38e35e024ea"
+        },
+        "screenreader_set": {
+          "bytes": 220,
+          "site_offset": 0,
+          "sha256": "69f830682cea694eb26e75393c99403e33e94025082682506ef2a63d53cf1e6f"
+        },
+        "waveform_draw": {
+          "bytes": 568,
+          "site_offset": 0,
+          "sha256": "ac20f7170192991ea0bdcb2e8b3ad310deebdcbcb5714860e58c16fb56fcd11b"
+        },
+        "waveform_header_draw": {
+          "bytes": 1912,
+          "site_offset": 0,
+          "sha256": "67295628c25b133c227e508f94b5eb2aa86fe68c6c88e51c85770214aaeeffcd"
+        },
+        "header_single": {
+          "bytes": 84,
+          "site_offset": 0,
+          "sha256": "05413fb90d84d7debc8d7d5cd5e4a11f0039a4f1cce39b3ef1fd491ff65415b2"
+        },
+        "header_pair": {
+          "bytes": 148,
+          "site_offset": 0,
+          "sha256": "f5a0b18e09772221810fed217d2397fb5bfd40a6177ef83352742f6b90d9cc16"
+        },
+        "draw_lines": {
+          "bytes": 980,
+          "site_offset": 0,
+          "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
+        }
+      },
+      "candidate_sha256": "78afc6bd4af71f5aed5a5d37af0b8b9a28ee7c0313f4bb0c2f57e244e849bfa7",
+      "hardware_verified": false
+    }
+  }
+}

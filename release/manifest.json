@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "product": "MoveSpeech",
+  "version": "1.0.0",
+  "sequence": 3,
+  "summary": "Speech for Sampling, Slice, sample controls and step velocity.",
+  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.0/MoveSpeech-1.0.0.zip",
+  "bytes": 25865,
+  "sha256": "f50ebc620c2b07eee1ec340fd90bdf307e351cf9bbe9155d2354b6cb76776c5c",
+  "files": {
+    "Manual.html": {
+      "bytes": 8004,
+      "sha256": "07177c2b421687a74460b4832e0ea1de3df32601a52274098e57b23653c2177e",
+      "mode": 420
+    },
+    "catalog.json": {
+      "bytes": 13671,
+      "sha256": "e2ea86986d4ede62677d0d19376f012778bf30a30c5d50227a10b8286a0e867b",
+      "mode": 420
+    },
+    "detect_native.py": {
+      "bytes": 2085,
+      "sha256": "d33c3836966187b7c91b8b23593210b32186e5654892247264402e126f163f87",
+      "mode": 420
+    },
+    "device.py": {
+      "bytes": 9802,
+      "sha256": "c875777804596263030be053ec3b5484f136836927c9e076c24deb8d53eb1897",
+      "mode": 420
+    },
+    "engine.py": {
+      "bytes": 11284,
+      "sha256": "80ba92321067f70f499973e1263885d06596ce2229ffbe97d31346a8c1c40173",
+      "mode": 420
+    },
+    "firmware.py": {
+      "bytes": 5669,
+      "sha256": "c80bb22ae4ce74db3faa19cb1cff8e57a497c124be67cc18c51db4d4eeec3724",
+      "mode": 420
+    },
+    "hooks.bin": {
+      "bytes": 1923,
+      "sha256": "8bfa3925e3a2b7795cfad406a6d0717704a94bdbb8b1646de889779ffad82fa2",
+      "mode": 420
+    },
+    "install.py": {
+      "bytes": 8742,
+      "sha256": "408bbbe21c1460ad15885ddab1a448d414426a7e05020573b418ec734aa1e363",
+      "mode": 420
+    },
+    "patcher.py": {
+      "bytes": 4455,
+      "sha256": "29f27449ecd5cfc68db0e4c852f18896b2bf4ee1d8407086d51b5a1ce4205e4a",
+      "mode": 420
+    },
+    "runtime.py": {
+      "bytes": 4591,
+      "sha256": "f6a4e15e4cccb6b379323e251c1665f8d6a3410f8c9eae0d4d8079d18ec4d133",
+      "mode": 420
+    },
+    "startup_patch.py": {
+      "bytes": 994,
+      "sha256": "9a15eb0510e93ddef4e2464b42e5568542c0037321353df039f2a3b2edb10ce6",
+      "mode": 420
+    },
+    "trust.py": {
+      "bytes": 785,
+      "sha256": "a91196fe6bf6795c3aa3bcd03a685d7d3dc31e4c872bfb476d79169a250c72b4",
+      "mode": 420
+    },
+    "verify.py": {
+      "bytes": 4955,
+      "sha256": "5c4bc7fd84c65478c179e8e1f8b0ae64dc75a808c68531d3db737e3e48bf1aae",
+      "mode": 420
+    }
+  }
+}
