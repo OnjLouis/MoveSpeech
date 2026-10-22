@@ -15,7 +15,7 @@ from device import Device, atomic, secure
 from engine import Operation
 from verify import load_package
 
-VERSION = '1.0.1'
+VERSION = '1.0.2'
 TERMINAL_PHASES = {'installed', 'uninstalled', 'failed'}
 
 

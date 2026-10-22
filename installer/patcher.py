@@ -8,7 +8,8 @@ from firmware import Image, PROGRAM, branch, branch_target, sha
 
 HOOK_HELPERS = {'sampling_call': 'draw_text', 'gain_call': 'draw_text',
                 'slice_count_call': 'draw_text', 'slice_waveform_call': 'waveform_draw',
-                'sample_waveform_tail': 'waveform_draw', 'step_velocity_call': 'draw_lines'}
+                'sample_waveform_tail': 'waveform_draw', 'step_velocity_call': 'draw_lines',
+                'wifi_character_call': 'draw_text'}
 
 
 def load_catalog():

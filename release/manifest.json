@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "product": "MoveSpeech",
-  "version": "1.0.1",
-  "sequence": 4,
-  "summary": "Short shell installation and removal commands; speech fixes are unchanged.",
-  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.1/MoveSpeech-1.0.1.zip",
-  "bytes": 27099,
-  "sha256": "56a9d61ef57e571a4e6c16479f77503ad3a87cdd5c27fc58d207017607f581ad",
+  "version": "1.0.2",
+  "sequence": 7,
+  "summary": "Announce Wi-Fi password character selection and changing sample and audio-track Start positions.",
+  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.2/MoveSpeech-1.0.2.zip",
+  "bytes": 29485,
+  "sha256": "14212d2f92eb1a99b8ad23eb7041f3e8580ddc3b1859dbb5101ccbcf504e745b",
   "files": {
     "Manual.html": {
-      "bytes": 9836,
-      "sha256": "4119254a33569cd27df219bcb6cb43d0431279eb36c1642009d77ec92a1179be",
+      "bytes": 11066,
+      "sha256": "2575e47b9c4e143acbb24355827c336d41a1f7131a242fc70614029f442fb9ce",
       "mode": 420
     },
     "catalog.json": {
-      "bytes": 13671,
-      "sha256": "e2ea86986d4ede62677d0d19376f012778bf30a30c5d50227a10b8286a0e867b",
+      "bytes": 14633,
+      "sha256": "1ace034f7f55e72239b228c916a31d46a05109f1545298ab805562d6b3465cf1",
       "mode": 420
     },
     "detect_native.py": {
@@ -24,13 +24,13 @@
       "mode": 420
     },
     "device.py": {
-      "bytes": 9802,
-      "sha256": "c875777804596263030be053ec3b5484f136836927c9e076c24deb8d53eb1897",
+      "bytes": 10454,
+      "sha256": "5f08009546ce9f9a2597bd283485d20936abd0b3bc5b3fec411019bc83f846af",
       "mode": 420
     },
     "engine.py": {
-      "bytes": 11284,
-      "sha256": "80ba92321067f70f499973e1263885d06596ce2229ffbe97d31346a8c1c40173",
+      "bytes": 11246,
+      "sha256": "f2a122c80c8c71102b9d1a92c4a252aee23d144676d943569da9fda3def90cdb",
       "mode": 420
     },
     "firmware.py": {
@@ -39,13 +39,13 @@
       "mode": 420
     },
     "hooks.bin": {
-      "bytes": 1923,
-      "sha256": "8bfa3925e3a2b7795cfad406a6d0717704a94bdbb8b1646de889779ffad82fa2",
+      "bytes": 4293,
+      "sha256": "990a4d82b68ecdafe8abd92ac26fb87ee1f1d146fb9a95c6da403c9d5ffc9c55",
       "mode": 420
     },
     "install.py": {
       "bytes": 8742,
-      "sha256": "c49ad161ba89add11b72616a589a4d8930b267ec983b854baa163319188e76c3",
+      "sha256": "f3e7f1119bcce7734d017d765078bce7a6bff40b3c0b23db181a68ddc89c2778",
       "mode": 420
     },
     "install.sh": {
@@ -54,8 +54,8 @@
       "mode": 420
     },
     "patcher.py": {
-      "bytes": 4455,
-      "sha256": "29f27449ecd5cfc68db0e4c852f18896b2bf4ee1d8407086d51b5a1ce4205e4a",
+      "bytes": 4507,
+      "sha256": "e2bfdb69bc0310a52077a77511b9970c4e2499c545f0aac889f8e5d8841b0032",
       "mode": 420
     },
     "runtime.py": {

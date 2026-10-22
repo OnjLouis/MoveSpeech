@@ -1,7 +1,12 @@
 # Move Speech
 
 Speech fixes for Ableton Move's Sampling, Slice, sample start/end controls and
-step velocity.
+step velocity, plus Wi-Fi password character selection.
+Loaded-sample Start and audio-track Start include their changing positions as
+percentages of the complete sample.
+The password selector announces letters, numbers, punctuation and its action
+controls without reading back the complete password. Separate confirmation
+of character insertion and deletion is not yet provided.
 Uses Move's existing screen-reader events, so browser speech and existing
 Schwung speech setups can receive the restored text.
 
@@ -59,7 +64,8 @@ power during installation.
 ## Compatibility
 
 Firmware 2.1.5b2 has been tested on a physical Move with Schwung, including
-Sampling, Slice, loaded-sample controls and held-step velocity. The installer's
+Sampling, Slice, loaded-sample controls, held-step velocity and the Wi-Fi
+password character selector. The installer's
 install, removal, reinstall, interrupted-connection and rollback paths have
 also been tested on that configuration.
 

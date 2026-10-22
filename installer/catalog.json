@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "product": "MoveSpeech",
-  "payload_bytes": 1923,
-  "payload_sha256": "8bfa3925e3a2b7795cfad406a6d0717704a94bdbb8b1646de889779ffad82fa2",
+  "payload_bytes": 4293,
+  "payload_sha256": "990a4d82b68ecdafe8abd92ac26fb87ee1f1d146fb9a95c6da403c9d5ffc9c55",
   "segment_address": 31195136,
   "payload_address": 31199232,
   "init_sha256": "15426e57dfd1f9aea75d130e0859ed410b6629f28fea1277157aaad2d6f74564",
@@ -12,7 +12,8 @@
     "slice_count_call": 144,
     "slice_waveform_call": 216,
     "sample_waveform_tail": 256,
-    "step_velocity_call": 296
+    "step_velocity_call": 296,
+    "wifi_character_call": 364
   },
   "fixups": [
     {
@@ -40,7 +41,11 @@
       "helper": "draw_lines"
     },
     {
-      "offset": 1228,
+      "offset": 372,
+      "helper": "draw_text"
+    },
+    {
+      "offset": 1284,
       "helper": "screenreader_set"
     }
   ],
@@ -90,6 +95,11 @@
       "site_offset": 0,
       "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
     },
+    "wifi_character_call": {
+      "bytes": 884,
+      "site_offset": 648,
+      "sha256": "7b2faa0a587b399a304da7b5fccaf3f2e3ef18f373128147adbe4972d4abd9c9"
+    },
     "screenreader_set": {
       "bytes": 220,
       "site_offset": 0,
@@ -128,6 +138,7 @@
         "sample_waveform_tail": 9467232,
         "step_velocity_call": 10034860,
         "velocity_caller": 8045688,
+        "wifi_character_call": 8065224,
         "draw_text": 15492952,
         "screenreader_set": 9701172,
         "waveform_draw": 10046872,
@@ -172,6 +183,11 @@
           "site_offset": 17244,
           "sha256": "8e2ad8f2f538bfedff59b269c164f4cfacbad012fb98008bfcd0b097a78bdefa"
         },
+        "wifi_character_call": {
+          "bytes": 884,
+          "site_offset": 648,
+          "sha256": "7b2faa0a587b399a304da7b5fccaf3f2e3ef18f373128147adbe4972d4abd9c9"
+        },
         "draw_text": {
           "bytes": 1160,
           "site_offset": 0,
@@ -208,7 +224,7 @@
           "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
         }
       },
-      "candidate_sha256": "745f819497f2a64fb06485ccc73bcf20691d593bf95335ae2f896e3df484227c",
+      "candidate_sha256": "e5d37f4b7f4f85daf3f0b01aa53a837cb54866d420b06da3b8bb8e8eab022f0b",
       "hardware_verified": true
     },
     "22a61d9c2a1b34060aab36fb2084d600ac01f6b13455cd5d1e19d26be41944a1": {
@@ -222,6 +238,7 @@
         "sample_waveform_tail": 9467504,
         "step_velocity_call": 10035132,
         "velocity_caller": 8045964,
+        "wifi_character_call": 8065500,
         "draw_text": 15493224,
         "screenreader_set": 9701444,
         "waveform_draw": 10047144,
@@ -266,6 +283,11 @@
           "site_offset": 17244,
           "sha256": "8c8fbc883b019c51f7c12eab576d45bb53b5b83e2e4231767df4a6a69d5ef3d6"
         },
+        "wifi_character_call": {
+          "bytes": 884,
+          "site_offset": 648,
+          "sha256": "73f81b7d67a784cf3e76907c3de57589bf3fa0515b2b28a3860b1311138ec835"
+        },
         "draw_text": {
           "bytes": 1160,
           "site_offset": 0,
@@ -302,7 +324,7 @@
           "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
         }
       },
-      "candidate_sha256": "ea62a100fa7256b64a7fd9655716f684fb2236a0881a6e273e6b289b269ba434",
+      "candidate_sha256": "53845e7a259a38520e013f950f0b86234a4898a2d606cbcf9366493db66aa220",
       "hardware_verified": false
     },
     "e5ddb1b06c808117da453312d0169a7b9553f5651214ceff5635fc06a0baf8b8": {
@@ -316,6 +338,7 @@
         "sample_waveform_tail": 9190124,
         "step_velocity_call": 9758376,
         "velocity_caller": 7986404,
+        "wifi_character_call": 8005432,
         "draw_text": 14940344,
         "screenreader_set": 9426088,
         "waveform_draw": 9770368,
@@ -360,6 +383,11 @@
           "site_offset": 16336,
           "sha256": "c70f82b88c3f718caef59e65356700a0d7038375c7d14ef01688ce9b3b224f0b"
         },
+        "wifi_character_call": {
+          "bytes": 884,
+          "site_offset": 648,
+          "sha256": "2d2680132d4e9a19349b465590ccd9b48f684f2fffe706ed4bed14c105033bee"
+        },
         "draw_text": {
           "bytes": 1160,
           "site_offset": 0,
@@ -396,7 +424,7 @@
           "sha256": "86d4d4a67e245245964ff1ab3563089e076c00c69b1c6f9fce172e0389847824"
         }
       },
-      "candidate_sha256": "78afc6bd4af71f5aed5a5d37af0b8b9a28ee7c0313f4bb0c2f57e244e849bfa7",
+      "candidate_sha256": "001827b8a93bf12a4bdd886984f7107a80630508e683c8d0346428da98517e5b",
       "hardware_verified": false
     }
   }

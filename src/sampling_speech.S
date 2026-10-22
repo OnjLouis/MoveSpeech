@@ -77,3 +77,24 @@ step_velocity_speech:
     add sp, sp, #80
     ret
 .size step_velocity_speech, . - step_velocity_speech
+
+.extern speak_wifi_character
+.global wifi_character_speech
+.type wifi_character_speech, %function
+wifi_character_speech:
+    stp x29, x30, [sp, #-48]!
+    mov x29, sp
+    bl stock_draw_text
+    stp x0, x1, [sp, #16]
+    cmp x25, x27
+    b.ne 1f
+    ldr x8, [x21, #0x30]
+    ldr w1, [x8, x25, lsl #2]
+    ldr w2, [x21, #0x28]
+    sub x0, x20, #0x50
+    bl speak_wifi_character
+1:
+    ldp x0, x1, [sp, #16]
+    ldp x29, x30, [sp], #48
+    ret
+.size wifi_character_speech, . - wifi_character_speech

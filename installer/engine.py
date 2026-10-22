@@ -159,7 +159,7 @@ class Operation:
                     self.lifecycle.start_move(device, state)
                 if not device.system.mounted(target) or not os.path.samefile(target, candidate) or digest(target) != state['patch_sha256']:
                     raise RuntimeError('Speech did not activate after installation')
-                report('Move Speech installed. Sampling, Slice, sample controls and step velocity are enabled.')
+                report('Move Speech installed. Speech fixes are enabled.')
             elif action == 'uninstall':
                 report('Restoring unmodified Move...')
                 modified_runtime = True

@@ -205,13 +205,23 @@ class Device:
     def existing_mount(self, target, permitted_sha):
         if not self.system.mounted(target):
             return None
+        previous_candidate, previous_sha = None, None
+        if (self.root / 'state.json').is_file():
+            # An upgrade must accept the previous signed profile, not just
+            # historical trial filenames. read_state verifies its signed catalog.
+            previous = self.read_state()
+            previous_target, previous_candidate = self.paths(previous)
+            if previous_target != target:
+                raise RuntimeError('Previous speech state names a different native executable')
+            previous_sha = previous['patch_sha256']
         for candidate in self.root.iterdir():
             if not candidate.is_file() or candidate.is_symlink():
                 continue
             if os.path.samefile(target, candidate):
                 secure(candidate)
                 actual = digest(candidate)
-                if actual == permitted_sha or LEGACY_BUILDS.get(candidate.name) == actual:
+                if (actual == permitted_sha or LEGACY_BUILDS.get(candidate.name) == actual
+                        or (candidate == previous_candidate and actual == previous_sha)):
                     return candidate
         raise RuntimeError('An unknown executable mount is present; no changes attempted')
 

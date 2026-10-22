@@ -12,9 +12,12 @@ table { border-collapse: collapse; width: 100%; } th,td { padding: .5rem; border
 </style>
 </head>
 <body>
-<header><h1>Move Speech Help</h1><p>Speech fixes for Ableton Move. Version 1.0.1.</p></header>
+<header><h1>Move Speech Help</h1><p>Speech fixes for Ableton Move. Version 1.0.2.</p></header>
 <main>
 <h2 id="changes">Changes</h2>
+<h3>1.0.2</h3>
+<p>Loaded-sample Start and audio-track Start now announce their changing positions as percentages of the complete sample, rather than only their labels.</p>
+<p>The Wi-Fi password character selector now speaks letters, numbers, punctuation and its character-set, delete and confirm controls.</p>
 <h3>1.0.1</h3>
 <p>Short shell commands for installation, checks and removal, with the certificate-checked Python option still available. Confirmation prompts work when the shell script is piped into the SSH terminal. Speech fixes are unchanged.</p>
 <h3>1.0.0</h3>
@@ -48,7 +51,10 @@ table { border-collapse: collapse; width: 100%; } th,td { padding: .5rem; border
 <ul><li>Sampling: menu headings, source, gain, monitoring and recording state.</li>
 <li>Slice: slice count and the relevant region controls.</li>
 <li>Sample controls: start and end values when a sample is loaded, including knob 2 and Shift with knob 5.</li>
-<li>Step velocity: hold a step and turn the volume control to hear its changing velocity value.</li></ul>
+<li>Start positions: knob 2 on a loaded sample pad and knob 3 on an audio track announce the position as a percentage of the complete sample. Audio-track labels such as Bar 1 Start are preserved. An audio track's start can be outside the sample, so negative values and values above 100 percent are possible.</li>
+<li>Step velocity: hold a step and turn the volume control to hear its changing velocity value.</li>
+<li>Wi-Fi password entry: turn the wheel to hear the selected character. Lowercase letters and numbers are spoken on their own; uppercase letters use Cap, such as Cap A. Spaces and punctuation have spoken names. The character-set switch, Delete character and Confirm password controls are also named.</li></ul>
+<p>Password selection does not read back the complete password. Inserting or deleting a character does not yet have a separate confirmation announcement. Browser speech requires a working connection to Move; use USB connectivity or an existing on-device speech setup when changing Wi-Fi networks.</p>
 <p>Other controls using the repaired display paths can also benefit. Audio-track Tempo, Start and Input Gain, and drum-pad Volume have been reported working. This does not mean every silent screen or control is fixed.</p>
 <h2 id="firmware">Firmware Compatibility and Updates</h2>
 <table><caption>Firmware profiles</caption><thead><tr><th scope="col">Firmware</th><th scope="col">Verification</th></tr></thead><tbody>
