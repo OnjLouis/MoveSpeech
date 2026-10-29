@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "product": "MoveSpeech",
-  "version": "1.0.2",
-  "sequence": 7,
-  "summary": "Announce Wi-Fi password character selection and changing sample and audio-track Start positions.",
-  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.2/MoveSpeech-1.0.2.zip",
-  "bytes": 29485,
-  "sha256": "14212d2f92eb1a99b8ad23eb7041f3e8580ddc3b1859dbb5101ccbcf504e745b",
+  "version": "1.0.3",
+  "sequence": 8,
+  "summary": "Restore speech-fix installation after updating Move to firmware 2.1.5.",
+  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.3/MoveSpeech-1.0.3.zip",
+  "bytes": 29875,
+  "sha256": "de88ab77735a7ccab66793504c67590e874ade9d4818a7fedcb58b72fd14ce6f",
   "files": {
     "Manual.html": {
-      "bytes": 11066,
-      "sha256": "2575e47b9c4e143acbb24355827c336d41a1f7131a242fc70614029f442fb9ce",
+      "bytes": 11334,
+      "sha256": "7cfe6b774dcd46f7e5e08e110705deff35e02c081c3b5af6f6263c19e556c606",
       "mode": 420
     },
     "catalog.json": {
-      "bytes": 14633,
-      "sha256": "1ace034f7f55e72239b228c916a31d46a05109f1545298ab805562d6b3465cf1",
+      "bytes": 18299,
+      "sha256": "42488c3f943591efbfe85d800f38285f352cf4488255dcf39e94d5a9c7e5f93e",
       "mode": 420
     },
     "detect_native.py": {
@@ -45,7 +45,7 @@
     },
     "install.py": {
       "bytes": 8742,
-      "sha256": "f3e7f1119bcce7734d017d765078bce7a6bff40b3c0b23db181a68ddc89c2778",
+      "sha256": "5895da9847e8ff380b93739f06a5039406d7b5b7062b10e10fbe92e766581e5f",
       "mode": 420
     },
     "install.sh": {
