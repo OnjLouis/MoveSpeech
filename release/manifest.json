@@ -1,21 +1,21 @@
 {
   "schema": 1,
   "product": "MoveSpeech",
-  "version": "1.0.3",
-  "sequence": 8,
-  "summary": "Restore speech-fix installation after updating Move to firmware 2.1.5.",
-  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.3/MoveSpeech-1.0.3.zip",
-  "bytes": 29875,
-  "sha256": "de88ab77735a7ccab66793504c67590e874ade9d4818a7fedcb58b72fd14ce6f",
+  "version": "1.0.4",
+  "sequence": 9,
+  "summary": "Restore Move Speech on the November 11 firmware build.",
+  "url": "https://github.com/OnjLouis/MoveSpeech/releases/download/v1.0.4/MoveSpeech-1.0.4.zip",
+  "bytes": 30605,
+  "sha256": "cc23d1903b267ac5d6c49232e48ce767e3eb296b0f3505f9119d0ef852e37447",
   "files": {
     "Manual.html": {
-      "bytes": 11334,
-      "sha256": "7cfe6b774dcd46f7e5e08e110705deff35e02c081c3b5af6f6263c19e556c606",
+      "bytes": 11583,
+      "sha256": "0f88dde5f5e001f9059dcaee48a3e07e4bd2e79cc6250801108e6475bfcadc14",
       "mode": 420
     },
     "catalog.json": {
-      "bytes": 18299,
-      "sha256": "42488c3f943591efbfe85d800f38285f352cf4488255dcf39e94d5a9c7e5f93e",
+      "bytes": 22017,
+      "sha256": "8bb8ba6d3cc0cc56fb8912428d43a78ab74f03ff136b080be34821d1b38789ad",
       "mode": 420
     },
     "detect_native.py": {
@@ -45,7 +45,7 @@
     },
     "install.py": {
       "bytes": 8742,
-      "sha256": "5895da9847e8ff380b93739f06a5039406d7b5b7062b10e10fbe92e766581e5f",
+      "sha256": "ca60e94d3c479119a5c1d7fd1a75987e36111b110d6fdcafac3e7d44a8f22346",
       "mode": 420
     },
     "install.sh": {
@@ -54,8 +54,8 @@
       "mode": 420
     },
     "patcher.py": {
-      "bytes": 4507,
-      "sha256": "e2bfdb69bc0310a52077a77511b9970c4e2499c545f0aac889f8e5d8841b0032",
+      "bytes": 4874,
+      "sha256": "60c5f22661cd15fc296fc50a4a72a9612250b720674be1999825e59365fbf18d",
       "mode": 420
     },
     "runtime.py": {

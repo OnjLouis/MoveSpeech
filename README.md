@@ -63,7 +63,7 @@ power during installation.
 
 ## Compatibility
 
-Firmware 2.1.5 and 2.1.5b2 have been tested on a physical Move with Schwung, including
+The 11 November 2026 Move build, firmware 2.1.5 and 2.1.5b2 have been tested on a physical Move with Schwung, including
 Sampling, Slice, loaded-sample controls, held-step velocity and the Wi-Fi
 password character selector. The installer's
 install, removal, reinstall, interrupted-connection and rollback paths have

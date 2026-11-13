@@ -49,9 +49,20 @@ def build(original, payload, catalog=None):
     if len(payload) != catalog['payload_bytes'] or sha(payload) != catalog['payload_sha256']:
         raise ValueError('Invalid speech hook payload')
     image, profile = inspect(original, catalog)
-    segment, payload_address = catalog['segment_address'], catalog['payload_address']
+    result = render(image, payload, catalog, profile)
+    if sha(result) != profile['candidate_sha256']:
+        raise ValueError('Generated firmware does not match the verified build')
+    return result
+
+
+def render(image, payload, catalog, profile):
+    original = image.data
+    segment = profile.get('segment_address', catalog['segment_address'])
+    payload_address = segment + (catalog['payload_address'] - catalog['segment_address'])
     if image.phnum != 12 or payload_address != segment + 0x1000 or segment < len(original):
         raise ValueError('Unsupported firmware program headers')
+    if segment % 0x10000 or payload_address + len(payload) > 64 * 1024 * 1024:
+        raise ValueError('Unsupported speech segment placement')
     if any(p[3] + p[6] > segment for p in image.programs if p[0] == 1):
         raise ValueError('Speech hook would overlap firmware memory')
     adjusted = bytearray(payload)
@@ -83,6 +94,4 @@ def build(original, payload, catalog=None):
     result.extend(table)
     result.extend(bytes(payload_address - len(result)))
     result.extend(adjusted)
-    if sha(result) != profile['candidate_sha256']:
-        raise ValueError('Generated firmware does not match the verified build')
     return result
